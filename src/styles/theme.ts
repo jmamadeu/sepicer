@@ -1,6 +1,6 @@
 import { TextStyle } from "react-native";
 
-enum Fonts {
+enum TypographyName {
   h1 = "h1",
   h2 = "h2",
   h3 = "h3",
@@ -20,7 +20,7 @@ enum Colors {
 }
 
 type FontsType = {
-  [x in Fonts]: TextStyle;
+  [x in TypographyName]: TextStyle;
 };
 
 type ColorsType = {
