@@ -44,7 +44,7 @@ const color: ColorsType = {
 
 const font: FontsType = {
   h1: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontWeight: "bold",
     fontSize: 22,
     fontStyle: "normal",
@@ -52,7 +52,7 @@ const font: FontsType = {
     letterSpacing: 0.5
   },
   h2: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontWeight: "bold",
     fontStyle: "normal",
     lineHeight: 27,
@@ -60,7 +60,7 @@ const font: FontsType = {
     fontSize: 17
   },
   h3: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontWeight: "bold",
     fontStyle: "normal",
     lineHeight: 25,
@@ -68,7 +68,7 @@ const font: FontsType = {
     fontSize: 15
   },
   p1: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_400Regular",
     fontStyle: "normal",
     lineHeight: 27,
     letterSpacing: 0.5,
@@ -76,7 +76,7 @@ const font: FontsType = {
     fontWeight: "500"
   },
   p2: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_400Regular",
     fontSize: 15,
     fontStyle: "normal",
     fontWeight: "500",
@@ -84,7 +84,7 @@ const font: FontsType = {
     letterSpacing: 0.5
   },
   s: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_400Regular",
     fontWeight: "500",
     fontStyle: "normal",
     fontSize: 12,
