@@ -19,7 +19,12 @@ enum Colors {
   white = "white"
 }
 
-type FontsType = {
+enum FontFamilies {
+  normal = "normal",
+  bold = "bold"
+}
+
+type TypographyType = {
   [x in TypographyName]: TextStyle;
 };
 
@@ -27,9 +32,19 @@ type ColorsType = {
   [x in Colors]: string;
 };
 
+type FontFamiliesType = {
+  [x in FontFamilies]: string;
+};
+
 type ThemeProps = {
-  font: FontsType;
+  typography: TypographyType;
   color: ColorsType;
+  font: FontFamiliesType;
+};
+
+const fontsFamily = {
+  normal: "Inter_400Regular",
+  bold: "Inter_700Bold"
 };
 
 const color: ColorsType = {
@@ -42,9 +57,9 @@ const color: ColorsType = {
   white: "#fff"
 };
 
-const font: FontsType = {
+const typography: TypographyType = {
   h1: {
-    fontFamily: "Inter_700Bold",
+    fontFamily: fontsFamily.bold,
     fontWeight: "bold",
     fontSize: 22,
     fontStyle: "normal",
@@ -52,7 +67,7 @@ const font: FontsType = {
     letterSpacing: 0.5
   },
   h2: {
-    fontFamily: "Inter_700Bold",
+    fontFamily: fontsFamily.bold,
     fontWeight: "bold",
     fontStyle: "normal",
     lineHeight: 27,
@@ -60,7 +75,7 @@ const font: FontsType = {
     fontSize: 17
   },
   h3: {
-    fontFamily: "Inter_700Bold",
+    fontFamily: fontsFamily.bold,
     fontWeight: "bold",
     fontStyle: "normal",
     lineHeight: 25,
@@ -68,7 +83,7 @@ const font: FontsType = {
     fontSize: 15
   },
   p1: {
-    fontFamily: "Inter_400Regular",
+    fontFamily: fontsFamily.normal,
     fontStyle: "normal",
     lineHeight: 27,
     letterSpacing: 0.5,
@@ -76,7 +91,7 @@ const font: FontsType = {
     fontWeight: "500"
   },
   p2: {
-    fontFamily: "Inter_400Regular",
+    fontFamily: fontsFamily.normal,
     fontSize: 15,
     fontStyle: "normal",
     fontWeight: "500",
@@ -84,7 +99,7 @@ const font: FontsType = {
     letterSpacing: 0.5
   },
   s: {
-    fontFamily: "Inter_400Regular",
+    fontFamily: fontsFamily.normal,
     fontWeight: "500",
     fontStyle: "normal",
     fontSize: 12,
@@ -95,5 +110,6 @@ const font: FontsType = {
 
 export const theme: ThemeProps = {
   color,
-  font
+  typography,
+  font: fontsFamily
 };
