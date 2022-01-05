@@ -1,9 +1,16 @@
 import { Button } from "@atoms/button";
-import { Typography } from "@atoms/typography";
-import { theme } from "@styles/theme";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { ButtonText } from "@atoms/button-text";
+import { OnboardingMessage } from "@molecules/onboarding-message";
+import { useNavigation } from "@react-navigation/native";
+import { SignInScreenNavigationProp } from "@routes/types";
+import { Image, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Onboarding = (): JSX.Element => {
+  const { navigate } = useNavigation<SignInScreenNavigationProp>();
+
+  const handleNavigateToSignIn = () => navigate("SignIn");
+
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -13,22 +20,14 @@ export const Onboarding = (): JSX.Element => {
       />
 
       <View style={styles.contentContainer}>
-        <View style={styles.content}>
-          <Typography variant="h1" style={styles.headerText}>
-            Start Cooking
-          </Typography>
-          <Typography variant="p1" style={styles.subHeaderText}>
-            Let&apos;s join our community
-          </Typography>
-          <Typography variant="p1">to cook better food!</Typography>
-        </View>
+        <OnboardingMessage />
 
         <Button
           style={styles.buttonContainer}
           variant="primary"
-          onPress={() => {}}
+          onPress={() => handleNavigateToSignIn()}
         >
-          <Text style={styles.buttonText}>Get started</Text>
+          <ButtonText>Get Started</ButtonText>
         </Button>
       </View>
     </SafeAreaView>
@@ -45,29 +44,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     marginBottom: 70
   },
-  content: {
-    flex: 1,
-    alignItems: "center"
-  },
-  headerText: {
-    marginTop: 48
-  },
-  subHeaderText: {
-    marginTop: 16
-  },
   image: {
     width: "100%",
     height: 500
   },
   buttonContainer: {
     width: "100%"
-  },
-  buttonText: {
-    color: theme.color.white,
-    fontFamily: theme.font.bold,
-    lineHeight: 18,
-    fontStyle: "normal",
-    letterSpacing: 0.007,
-    fontSize: 15
   }
 });
