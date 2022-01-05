@@ -3,7 +3,7 @@ import { Typography } from "@atoms/typography";
 import { theme } from "@styles/theme";
 import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
-export const Home = (): JSX.Element => {
+export const Onboarding = (): JSX.Element => {
   return (
     <SafeAreaView style={styles.container}>
       <Image
