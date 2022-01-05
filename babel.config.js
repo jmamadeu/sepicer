@@ -10,7 +10,8 @@ module.exports = function (api) {
             "@atoms": "./src/components/atoms",
             "@styles": "./src/styles",
             "@routes": "./src/routes",
-            "@screens": "./src/screens"
+            "@screens": "./src/screens",
+            "@molecules": "./src/components/molecules"
           }
         }
       ]
