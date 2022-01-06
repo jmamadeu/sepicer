@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     ...theme.typography.p1,
     color: theme.color.secondaryText
   },
-  p2: theme.typography.p2,
+  p2: { ...theme.typography.p2, color: theme.color.secondaryText },
 
   s: theme.typography.s
 });
