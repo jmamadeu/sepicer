@@ -1,5 +1,6 @@
 import {
   Inter_400Regular,
+  Inter_500Medium,
   Inter_700Bold,
   useFonts
 } from "@expo-google-fonts/inter";
@@ -11,6 +12,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 export default function App() {
   let [fontsLoaded] = useFonts({
     Inter_400Regular,
+    Inter_500Medium,
     Inter_700Bold
   });
 
