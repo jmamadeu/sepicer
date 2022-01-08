@@ -1,21 +1,31 @@
 /* eslint-disable react-native/no-unused-styles */
 import { theme } from "@styles/theme";
+import { ReactNode } from "react";
 import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
 
 type TypographyProperties = TextProps & {
-  children: string;
+  children: ReactNode;
   variant: "h1" | "h2" | "h3" | "p1" | "p2" | "s";
   style?: TextStyle;
+  color?: string;
 };
 
 export const Typography = ({
   children,
   variant,
   style,
+  color,
   ...rest
 }: TypographyProperties): JSX.Element => {
   return (
-    <Text style={[styles[variant], style]} {...rest}>
+    <Text
+      style={[
+        styles[variant],
+        { color: color ?? styles[variant].color },
+        style
+      ]}
+      {...rest}
+    >
       {children}
     </Text>
   );
@@ -24,16 +34,16 @@ export const Typography = ({
 const styles = StyleSheet.create({
   h1: {
     ...theme.typography.h1,
-    color: theme.color.mainText
+    color: theme.colors.mainText
   },
   h2: theme.typography.h2,
   h3: theme.typography.h3,
 
   p1: {
     ...theme.typography.p1,
-    color: theme.color.secondaryText
+    color: theme.colors.secondaryText
   },
-  p2: { ...theme.typography.p2, color: theme.color.secondaryText },
+  p2: { ...theme.typography.p2, color: theme.colors.secondaryText },
 
   s: theme.typography.s
 });

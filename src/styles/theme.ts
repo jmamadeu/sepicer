@@ -19,10 +19,11 @@ enum Colors {
   white = "white"
 }
 
-enum FontFamilies {
-  normal = "normal",
-  bold = "bold"
-}
+const fontsFamily = {
+  regular: "Inter_400Regular",
+  medium: "Inter_500Medium",
+  bold: "Inter_700Bold"
+};
 
 type TypographyType = {
   [x in TypographyName]: TextStyle;
@@ -33,21 +34,16 @@ type ColorsType = {
 };
 
 type FontFamiliesType = {
-  [x in FontFamilies]: string;
+  [x in keyof typeof fontsFamily]: string;
 };
 
 type ThemeProps = {
   typography: TypographyType;
-  color: ColorsType;
-  font: FontFamiliesType;
+  colors: ColorsType;
+  fonts: FontFamiliesType;
 };
 
-const fontsFamily = {
-  normal: "Inter_400Regular",
-  bold: "Inter_700Bold"
-};
-
-const color: ColorsType = {
+const colors: ColorsType = {
   primary: "#1FCC79",
   secondary: "#FF6464",
   mainText: "#2E3E5C",
@@ -83,7 +79,7 @@ const typography: TypographyType = {
     fontSize: 15
   },
   p1: {
-    fontFamily: fontsFamily.normal,
+    fontFamily: fontsFamily.medium,
     fontStyle: "normal",
     lineHeight: 27,
     letterSpacing: 0.5,
@@ -91,7 +87,7 @@ const typography: TypographyType = {
     fontWeight: "500"
   },
   p2: {
-    fontFamily: fontsFamily.normal,
+    fontFamily: fontsFamily.medium,
     fontSize: 15,
     fontStyle: "normal",
     fontWeight: "500",
@@ -99,7 +95,7 @@ const typography: TypographyType = {
     letterSpacing: 0.5
   },
   s: {
-    fontFamily: fontsFamily.normal,
+    fontFamily: fontsFamily.medium,
     fontWeight: "500",
     fontStyle: "normal",
     fontSize: 12,
@@ -109,7 +105,7 @@ const typography: TypographyType = {
 };
 
 export const theme: ThemeProps = {
-  color,
+  colors,
   typography,
-  font: fontsFamily
+  fonts: fontsFamily
 };

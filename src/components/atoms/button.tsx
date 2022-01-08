@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderRadius: 32
   },
   primary: {
-    backgroundColor: theme.color.primary,
+    backgroundColor: theme.colors.primary,
     paddingHorizontal: 15
   }
 });
@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
 const stylesOutline = StyleSheet.create({
   primary: {
     borderWidth: 2,
-    borderColor: theme.color.primary
+    borderColor: theme.colors.primary
   }
 });

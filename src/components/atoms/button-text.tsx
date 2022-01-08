@@ -12,8 +12,8 @@ export const ButtonText = ({ style, children }: ButtonTextProps) => (
 
 const styles = StyleSheet.create({
   buttonText: {
-    color: theme.color.white,
-    fontFamily: theme.font.bold,
+    color: theme.colors.white,
+    fontFamily: theme.fonts.bold,
     lineHeight: 18,
     fontStyle: "normal",
     letterSpacing: 0.007,
