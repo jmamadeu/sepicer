@@ -1,5 +1,5 @@
-import { Typography } from "@atoms/typography";
 import { StyleSheet, View } from "react-native";
+import { Typography } from "~/components/texts/typography";
 
 export const OnboardingMessage = (): JSX.Element => (
   <View style={styles.content}>

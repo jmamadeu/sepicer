@@ -4,13 +4,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src"],
-      "@atoms/*": ["./src/components/atoms/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@routes/*": ["./src/routes/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@molecules/*": ["./src/components/molecules/*"],
-      "@assets/*": ["./src/assets/*"],
+      "~/*": ["./src/*"],
     }
   }
 }

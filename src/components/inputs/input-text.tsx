@@ -1,4 +1,3 @@
-import { theme } from "@styles/theme";
 import { ReactNode } from "react";
 import {
   StyleSheet,
@@ -7,6 +6,7 @@ import {
   View,
   ViewStyle
 } from "react-native";
+import { theme } from "~/styles/theme";
 
 type InputProps = TextInputProps & {
   icon?: ReactNode;

@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-unused-styles */
-import { theme } from "@styles/theme";
 import { ReactNode } from "react";
 import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
+import { theme } from "~/styles/theme";
 
 type TypographyProperties = TextProps & {
   children: ReactNode;

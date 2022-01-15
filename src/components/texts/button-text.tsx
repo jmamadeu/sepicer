@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme";
 import { StyleSheet, Text, TextStyle } from "react-native";
+import { theme } from "~/styles/theme";
 
 type ButtonTextProps = {
   children: string;

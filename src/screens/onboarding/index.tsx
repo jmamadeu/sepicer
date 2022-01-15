@@ -1,10 +1,9 @@
-import { Button } from "@atoms/button";
-import { ButtonText } from "@atoms/button-text";
-import { OnboardingMessage } from "@molecules/onboarding-message";
 import { useNavigation } from "@react-navigation/native";
-import { SignInScreenNavigationProp } from "@routes/types";
 import { Image, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Button, ButtonText } from "~/components";
+import { SignInScreenNavigationProp } from "~/routes/types";
+import { OnboardingMessage } from "~/screens/onboarding/components/message";
 
 export const Onboarding = (): JSX.Element => {
   const { navigate } = useNavigation<SignInScreenNavigationProp>();
@@ -15,7 +14,7 @@ export const Onboarding = (): JSX.Element => {
     <SafeAreaView style={styles.container}>
       <Image
         style={styles.image}
-        source={require("../assets/images/onboarding.png")}
+        source={require("../../assets/images/onboarding.png")}
         accessibilityIgnoresInvertColors
       />
 

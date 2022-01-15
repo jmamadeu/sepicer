@@ -1,12 +1,8 @@
-import GoogleIcon from "@assets/icons/google";
-import { LockIcon } from "@assets/icons/lock";
-import { MessageIcon } from "@assets/icons/message";
-import { Button } from "@atoms/button";
-import { Typography } from "@atoms/typography";
-import { InputText } from "@molecules/input-text";
-import { theme } from "@styles/theme";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { GoogleIcon, LockIcon, MessageIcon } from "~/assets";
+import { Button, InputText, Typography } from "~/components";
+import { theme } from "~/styles/theme";
 
 export const SignIn = (): JSX.Element => (
   <SafeAreaView style={styles.container}>

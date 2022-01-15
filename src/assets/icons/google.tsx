@@ -11,4 +11,4 @@ const GoogleSVG = ({ color = "#000", ...props }: SvgProps) => (
 );
 
 const GoogleIcon = memo(GoogleSVG);
-export default GoogleIcon;
+export { GoogleIcon };

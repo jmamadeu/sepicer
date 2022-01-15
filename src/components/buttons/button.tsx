@@ -1,5 +1,4 @@
 /* eslint-disable react-native/no-unused-styles */
-import { theme } from "@styles/theme";
 import { ReactNode } from "react";
 import {
   Pressable,
@@ -8,6 +7,7 @@ import {
   StyleSheet,
   ViewStyle
 } from "react-native";
+import { theme } from "~/styles/theme";
 
 type ButtonProperties = PressableProps & {
   onPress: () => void;
