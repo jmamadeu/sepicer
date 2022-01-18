@@ -1,80 +1,94 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { GoogleIcon, LockIcon, MessageIcon } from "~/assets";
 import { Button, InputText, Typography } from "~/components";
+import { SignInScreenNavigationProp } from "~/routes";
 import { theme } from "~/styles/theme";
 
-export const SignIn = (): JSX.Element => (
-  <SafeAreaView style={styles.container}>
-    <View style={styles.contentContainer}>
-      <View style={styles.inputsContentContainer}>
-        <Typography color={theme.colors.mainText} variant="h1">
-          Welcome back
-        </Typography>
-        <Typography
-          color={theme.colors.secondaryText}
-          style={styles.secondaryTitle}
-          variant="p2"
-        >
-          Please enter your account here
-        </Typography>
+export const SignIn = (): JSX.Element => {
+  const { navigate } = useNavigation<SignInScreenNavigationProp>();
 
-        <InputText
-          placeholder="Email or phone number"
-          icon={<MessageIcon color={theme.colors.mainText} />}
-        />
+  const handleSignUpClickButton = (): void => {
+    navigate("SignUp");
+  };
 
-        <InputText
-          placeholder="Email or phone number"
-          containerStyle={styles.inputPasswordStyle}
-          icon={<LockIcon color={theme.colors.mainText} />}
-        />
-
-        <Typography
-          variant="p2"
-          color={theme.colors.mainText}
-          style={styles.forgotTextStyle}
-        >
-          Forgot password?
-        </Typography>
-      </View>
-
-      <View style={styles.buttonsContainer}>
-        <Button style={styles.button} variant="primary" onPress={() => {}}>
-          <Text style={styles.buttonText}>Login</Text>
-        </Button>
-
-        <Typography
-          variant="p2"
-          color={theme.colors.mainText}
-          style={styles.continueTextStyle}
-        >
-          Or continue with
-        </Typography>
-
-        <Button
-          style={[styles.button, styles.googleButtonStyles]}
-          variant="primary"
-          onPress={() => {}}
-        >
-          <GoogleIcon style={styles.iconStyes} color={theme.colors.white} />
-          <Text style={styles.buttonText}>Google</Text>
-        </Button>
-
-        <Typography
-          variant="p2"
-          color={theme.colors.mainText}
-          style={styles.googleTextStyle}
-        >
-          Don&apos;t have any account?{" "}
-          <Typography variant="h3" color={theme.colors.primary}>
-            Sign Up
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.contentContainer}>
+        <View style={styles.inputsContentContainer}>
+          <Typography color={theme.colors.mainText} variant="h1">
+            Welcome back
           </Typography>
-        </Typography>
+          <Typography
+            color={theme.colors.secondaryText}
+            style={styles.secondaryTitle}
+            variant="p2"
+          >
+            Please enter your account here
+          </Typography>
+
+          <InputText
+            placeholder="Email or phone number"
+            icon={<MessageIcon color={theme.colors.mainText} />}
+          />
+
+          <InputText
+            placeholder="Email or phone number"
+            containerStyle={styles.inputPasswordStyle}
+            icon={<LockIcon color={theme.colors.mainText} />}
+          />
+
+          <Typography
+            variant="p2"
+            color={theme.colors.mainText}
+            style={styles.forgotTextStyle}
+          >
+            Forgot password?
+          </Typography>
+        </View>
+
+        <View style={styles.buttonsContainer}>
+          <Button style={styles.button} variant="primary" onPress={() => {}}>
+            <Text style={styles.buttonText}>Login</Text>
+          </Button>
+
+          <Typography
+            variant="p2"
+            color={theme.colors.mainText}
+            style={styles.continueTextStyle}
+          >
+            Or continue with
+          </Typography>
+
+          <Button
+            style={[styles.button, styles.googleButtonStyles]}
+            variant="primary"
+            onPress={() => {}}
+          >
+            <GoogleIcon style={styles.iconStyes} color={theme.colors.white} />
+            <Text style={styles.buttonText}>Google</Text>
+          </Button>
+
+          <Typography
+            variant="p2"
+            color={theme.colors.mainText}
+            style={styles.googleTextStyle}
+          >
+            Don&apos;t have any account?{" "}
+            <Typography
+              onPress={handleSignUpClickButton}
+              variant="h3"
+              color={theme.colors.primary}
+            >
+              Sign Up
+            </Typography>
+          </Typography>
+        </View>
       </View>
-    </View>
-  </SafeAreaView>
-);
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
