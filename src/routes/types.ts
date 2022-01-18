@@ -3,6 +3,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 export type MainStackParamsList = {
   Onboarding: undefined;
   SignIn: undefined;
+  SignUp: undefined;
 };
 
 export type SignInProps = NativeStackScreenProps<MainStackParamsList, "SignIn">;
